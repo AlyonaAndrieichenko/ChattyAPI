@@ -5,11 +5,18 @@ import java.util.Objects;
 public class AuthorizationUser {
     private String email;
     private String password;
+    private String newPassword;
     private String confirmPassword;
     private String role;
 
      public AuthorizationUser() {
      }
+
+    public AuthorizationUser(String password, String newPassword) {
+        this.password = password;
+        this.newPassword = newPassword;
+
+    }
 
     public AuthorizationUser(String email, String password, String confirmPassword, String role) {
         this.email = email;
@@ -74,5 +81,13 @@ public class AuthorizationUser {
                 ", confirmPassword='" + confirmPassword + '\'' +
                 ", role='" + role + '\'' +
                 '}';
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
     }
 }

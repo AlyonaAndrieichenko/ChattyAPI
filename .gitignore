@@ -38,3 +38,5 @@ build/
 .DS_Store
 /src/main/APiCaseExample/
 /src/main/APIcases/
+/src/test/java/anna/
+/src/main/java/anna/

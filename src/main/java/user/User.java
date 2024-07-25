@@ -12,13 +12,17 @@ public class User {
     private String phone;
     private String gender;
     private String backgroundUrl;
+    private String password;
+    @Expose(serialize = true, deserialize = false)
+    private String email;
+    @Expose(serialize = false, deserialize = true)
     private boolean blocked;
     @Expose(serialize = true, deserialize = false)
     private String id;
     @Expose(serialize = true, deserialize = false)
     private String role;
 
-    public User() {
+    public User(Object o, Object object, String name, String surname, Object o1, String s, String gender, String backgroundUrl, boolean blocked) {
     }
 
     public User(String avatarUrl, String name, String surname, String birthDate, String phone, String gender,
@@ -127,6 +131,26 @@ public class User {
         this.role = role;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -141,6 +165,7 @@ public class User {
                 && Objects.equals(role, user.role);
     }
 
+    //AVATAR_URL, NAME, SURNAME, BIRTH_DATE, PHONE, GENDER, BACKGROUND_URL, BLOCKED
     @Override
     public int hashCode() {
         return Objects.hash(avatarUrl, name, surname, birthDate, phone, gender, backgroundUrl, blocked, id, role);

@@ -1,7 +1,9 @@
 package apiUtil;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
+import static apiUtil.UrlUtil.specification;
 import static io.restassured.RestAssured.given;
 
 public class ApiRequests {
@@ -11,7 +13,7 @@ public class ApiRequests {
 
     public static Response postRequestNoToken(String endpoint, Object body, int statusCode) {
         return given()
-                .spec(UrlUtil.specification)
+                .spec(specification)
                 .body(body)
                 .when()
                 .post(endpoint)
@@ -24,7 +26,7 @@ public class ApiRequests {
 
     public static Response postRequest(String endpoint, Object body, int statusCode, String accessToken) {
         return given()
-                .spec(UrlUtil.specification)
+                .spec(specification)
                 .header("Authorization", "Bearer " + accessToken)
                 .body(body)
                 .when()
@@ -38,7 +40,7 @@ public class ApiRequests {
 
     public static Response getRequest(String endpoint, int statusCode, String accessToken) {
         return given()
-                .spec(UrlUtil.specification)
+                .spec(specification)
                 .header("Authorization", "Bearer " + accessToken)
                 .when()
                 .get(endpoint)
@@ -51,7 +53,7 @@ public class ApiRequests {
 
     public static Response putRequest(String endpoint, Object updatedBody, int statusCode, String accessToken) {
         return given()
-                .spec(UrlUtil.specification)
+                .spec(specification)
                 .header("Authorization", "Bearer " + accessToken)
                 .body(updatedBody)
                 .when()
@@ -65,7 +67,7 @@ public class ApiRequests {
 
     public static Response deleteRequest(String endpoint, int statusCode, String accessToken, String idUser) {
         return given()
-                .spec(UrlUtil.specification)
+                .spec(specification)
                 .header("Authorization", "Bearer " + accessToken)
                 .when()
                 .delete(endpoint + idUser)

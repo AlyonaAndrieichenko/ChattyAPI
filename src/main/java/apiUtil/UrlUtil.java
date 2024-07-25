@@ -10,12 +10,13 @@ public class UrlUtil {
     public static final String REFRESH_PATH = "/auth/refresh";
     public static final String AUTH_PATH = "/auth/login";
     public static final String GET_USER_PATH = "/me";
-    public static final String UPDATE_OR_DELETE_USER_PATH = "/users";
+    public static final String UPDATE_OR_DELETE_USER_PATH = "/users/";
     public static final String GET_ALL_USERS_PATH = "/users";
     public static final String REGISTER_PATH = "/auth/register";
-    public static final String UPDATE_PASSWORD_PATH = "/auth/password/update";
-    public static final String GET_OR_PUT_OR_DELETE_OR_POST_POSTS_PATH = "/auth/posts";
-    public static final String GET_DRAFT_POSTS_PATH = "/auth/posts/drafts";
+    public static final String UPDATE_PASSWORD_PATH = "/user/password/update";
+    public static final String GET_OR_PUT_OR_DELETE_OR_POST_POSTS_PATH = "/posts";
+    public static final String GET_POST_BY_ID_PATH = "/posts/";
+    public static final String GET_DRAFT_POSTS_PATH = "/posts/drafts";
     public static final String UPDATE_IMAGE_PATH = "/images";
     public static final String POST_FEEDBACK_PATH = "/feedback";
 
