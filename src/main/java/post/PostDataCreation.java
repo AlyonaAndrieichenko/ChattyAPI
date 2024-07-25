@@ -22,4 +22,9 @@ public class PostDataCreation {
         return new Post(FAKER.lorem().word(), FAKER.lorem().sentence(), FAKER.lorem().paragraph(), FAKER.internet().image(), IS_DRAFT);
     }
 
+    public static Post getCreatedDraft(){
+        return new Post(FAKER.lorem().word(), FAKER.lorem().sentence(), FAKER.lorem().paragraph(), FAKER.internet().image(), true);
+    }
+
+
 }

@@ -17,7 +17,7 @@ public class UrlUtil {
     public static final String GET_OR_PUT_OR_DELETE_OR_POST_POSTS_PATH = "/posts";
     public static final String GET_POST_BY_ID_PATH = "/posts/";
     public static final String GET_DRAFT_POSTS_PATH = "/posts/drafts";
-    public static final String UPDATE_IMAGE_PATH = "/images";
+    public static final String UPLOAD_IMAGE_PATH = "/images";
     public static final String POST_FEEDBACK_PATH = "/feedback";
 
     public static final RequestSpecification specification = new RequestSpecBuilder()

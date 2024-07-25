@@ -1,6 +1,7 @@
 package post;
 
 import com.google.gson.annotations.Expose;
+import user.User;
 
 import java.util.Objects;
 
@@ -15,6 +16,7 @@ public class Post {
     @Expose(serialize = false, deserialize = true)
     private boolean draft;
     private String userId;
+    private User user;
 
     public Post(String title, String description, String body, String imageUrl, boolean draft) {
         this.title = title;
@@ -31,6 +33,16 @@ public class Post {
         this.imageUrl = imageUrl;
         this.publishDate = publishDate;
         this.draft = draft;
+    }
+
+    public Post(String title, String description, String body, String imageUrl, String publishDate, boolean draft, User user) {
+        this.title = title;
+        this.description = description;
+        this.body = body;
+        this.imageUrl = imageUrl;
+        this.publishDate = publishDate;
+        this.draft = draft;
+        this.user = user;
     }
 
     public String getId() {

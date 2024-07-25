@@ -3,6 +3,9 @@ package apiUtil;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
+import java.io.File;
+
+import static apiUtil.UrlUtil.BASE_URL;
 import static apiUtil.UrlUtil.specification;
 import static io.restassured.RestAssured.given;
 
@@ -31,6 +34,21 @@ public class ApiRequests {
                 .body(body)
                 .when()
                 .post(endpoint)
+                .then()
+                .log().all()
+                .statusCode(statusCode)
+                .extract()
+                .response();
+    }
+
+    public static Response postRequestFormData(String endpoint, File img, int statusCode, String accessToken) {
+        return given()
+                .header("Authorization", "Bearer " + accessToken)
+                .contentType("multipart/form-data")
+                .multiPart("multipartFile", img, "image/png")
+                .log().all()
+                .when()
+                .post(BASE_URL + endpoint)
                 .then()
                 .log().all()
                 .statusCode(statusCode)
